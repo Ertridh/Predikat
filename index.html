@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Kelulusan</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #result {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Cek Status Kelulusan</h1>
+<input type="number" id="nilai" placeholder="Masukkan nilai">
+<button onclick="cekKelulusan()">Cek</button>
+<div id="result"></div>
+<p>@ June 2024 Bebi Ahmad Janlinov XI-RPL</p>
+
+<script>
+function cekKelulusan() {
+    var nilai = document.getElementById("nilai").value;
+    var resultElement = document.getElementById("result");
+
+    if (nilai !== "" && !isNaN(nilai)) {
+        if (parseInt(nilai) >= 75) {
+            resultElement.textContent = "Lulus";
+        } else {
+            resultElement.textContent = "Tidak Lulus";
+        }
+    } else {
+        resultElement.textContent = "Masukkan nilai yang valid";
+    }
+}
+</script>
+</body>
+</html>
